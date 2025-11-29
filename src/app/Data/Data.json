@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.postimg.cc/rsBHwCzJ/dhaka-empyrean-dhaka-city-centre-photo-8.jpg",
+    "location": "Dhaka, Bangladesh",
+    "support": "24/7"
+  },
+  {
+    "id": 2,
+    "img": "https://i.postimg.cc/PJg75zN1/dhaka-Hotel-in-Kakrail.webp",
+    "location": "Sylhet, Bangladesh",
+    "support": "24/7"
+  },
+  {
+    "id": 3,
+    "img": "https://i.postimg.cc/sxkLg91k/cox-bazar.png",
+    "location": "Cox’s Bazar, Bangladesh",
+    "support": "24/7"
+  },
+  
+  {
+    "id": 4,
+    "img": "https://i.postimg.cc/L5Y7S04h/Sylhet-Hotel-and-Resort.webp",
+    "location": "Sylhet, Bangladesh",
+    "support": "24/7"
+  }
+]
