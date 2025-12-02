@@ -1,9 +1,28 @@
+"use client";
+
 import Image from "next/image";
 import Carousel from "./CarosolImage/page";
+import { useAuth } from "../authContext";
+import ServiceCTA from "./serviceCTA/page";
+
 
 export default function Home() {
+  const { user } = useAuth();
+
   return (
     <div>
+
+      <div className="flex items-center justify-center bg-gray-50">
+        {user ? (
+          <h1 className="text-2xl font-bold text-green-600">
+            Welcome, {user.email}
+          </h1>
+        ) : (
+          <ServiceCTA></ServiceCTA>
+        )}
+      </div>
+
+
       <div className="py-10 container mx-auto rounded-xl ">
         <div className="flex justify-between pl-30 pr-14 bg-gray-50 py-10">
           <div className="w-full max-w-sm">
