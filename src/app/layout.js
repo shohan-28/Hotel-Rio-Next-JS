@@ -1,10 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "../app/Components/Navbar";
-import Footer from "../app/Components/Footer";
+import Navbar from "./Components/Navbar";   // ✅ একই app ফোল্ডারের ভেতরে
+import Footer from "./Components/Footer";   // ✅ একই app ফোল্ডারের ভেতরে
 import { AuthProvider } from "../authContext";
 import { Toaster } from "react-hot-toast";
-
+import UserProvider from "./HotelContext"; // ✅ ঠিক path
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,11 +28,12 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AuthProvider>
-          <Navbar />
-          {children}
-          <Toaster position="top-right" />
-
-          <Footer />
+          <UserProvider>
+            <Navbar />
+            {children}
+            <Toaster position="top-right" />
+            <Footer />
+          </UserProvider>
         </AuthProvider>
       </body>
     </html>
