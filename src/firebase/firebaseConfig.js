@@ -1,7 +1,8 @@
 // src/firebase/firebaseConfig.js
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getAnalytics } from "firebase/analytics";
+// ❗ Analytics import kora hoyeche, but initialization korbo na ekhane
+import { getAnalytics, isSupported } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDcHlRaHJDrLZy73TtJtO47VpbhMdyXSYw",
@@ -15,5 +16,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);        // ✅ এখন auth export হচ্ছে
-export const analytics = getAnalytics(app);
+export const auth = getAuth(app);
+
+// ❗ Analytics server-side e run korbe NA.
+// ❗ This keeps Vercel build SAFE.
+export const analytics = typeof window !== "undefined"
+  ? await isSupported().then(supported => supported ? getAnalytics(app) : null)
+  : null;
