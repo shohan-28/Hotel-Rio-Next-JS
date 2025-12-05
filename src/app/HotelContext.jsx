@@ -1,41 +1,55 @@
 "use client";
 import { createContext, useEffect, useState } from "react";
 
-
 export const HotelContext = createContext();
+
 const UserProvider = ({ children }) => {
-    const [cartItem, setCartItem] = useState([]);
-    let [hotelData, setHotelData] = useState([]);
-    const [count, setCount] = useState(0);
-    const [loading, setLoading] = useState(true);
+  const [cartItem, setCartItem] = useState([]);
+  const [hotelData, setHotelData] = useState([]);
+  const [count, setCount] = useState(0);
+  const [loading, setLoading] = useState(true);
 
-    const [query, setQuery] = useState('');
-    const [category, setCategory] = useState("");
-    
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState("");
 
-    useEffect(() => {
-        setCount(cartItem.length);
-    }, [cartItem]);
+  // cart count auto update
+  useEffect(() => {
+    setCount(cartItem.length);
+  }, [cartItem]);
 
-    useEffect(() => {
-        fetch('/DataTwo/HotelData.json')
-            .then(res => res.json())
-            .then(data => {
-                console.log("HotelData:", data);
-                setCartItem([]);
-                setHotelData(data);
-                setLoading(false);
-            })
-    }, [])
+  // fetch hotel data from public folder
+  useEffect(() => {
+    fetch("/DataTwo/HotelData.json")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("HotelData:", data);
+        setHotelData(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Failed to load hotel data:", err);
+        setLoading(false);
+      });
+  }, []);
 
-    const value = { hotelData, setHotelData, count, cartItem, loading, setCartItem, setCount, query, setQuery, category, setCategory }
+  const value = {
+    hotelData,
+    setHotelData,
+    count,
+    cartItem,
+    setCartItem,
+    loading,
+    query,
+    setQuery,
+    category,
+    setCategory,
+  };
 
-    return (
-
-        <HotelContext.Provider value={value}>
-            {children}
-        </HotelContext.Provider>
-    )
-}
+  return (
+    <HotelContext.Provider value={value}>
+      {children}
+    </HotelContext.Provider>
+  );
+};
 
 export default UserProvider;
