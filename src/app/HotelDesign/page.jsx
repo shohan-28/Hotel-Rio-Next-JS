@@ -4,12 +4,15 @@ import React from "react";
 import { IoLocationSharp } from "react-icons/io5";
 
 const HotelDesign = ({ hotel }) => {
+  // Prevent crash if "hotel" is undefined
+  if (!hotel) return null;
+
   const { img, location, available, id } = hotel;
 
   return (
     <div className="border rounded-lg shadow-md overflow-hidden bg-white hover:shadow-lg transition">
       <div className="relative">
-        <Link href={`/Hotels/${hotel.id}`}>
+        <Link href={`/Hotels/${id}`}>
           <img src={img} alt={location} className="w-full h-48 object-cover" />
         </Link>
 
