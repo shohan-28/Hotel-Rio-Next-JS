@@ -1,10 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./Components/Navbar";   // ✅ একই app ফোল্ডারের ভেতরে
-import Footer from "./Components/Footer";   // ✅ একই app ফোল্ডারের ভেতরে
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 import { AuthProvider } from "../authContext";
 import { Toaster } from "react-hot-toast";
-import UserProvider from "./HotelContext"; // ✅ ঠিক path
+import UserProvider from "./HotelContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,13 +24,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <AuthProvider>
           <UserProvider>
             <Navbar />
-            {children}
+            <main>{children}</main>
             <Toaster position="top-right" />
             <Footer />
           </UserProvider>

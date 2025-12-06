@@ -11,6 +11,8 @@ const UserProvider = ({ children }) => {
 
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("");
+   const [orderHistory, setOrderHistory] = useState([]);
+
 
   // cart count auto update
   useEffect(() => {
@@ -25,6 +27,7 @@ const UserProvider = ({ children }) => {
         console.log("HotelData:", data);
         setHotelData(data);
         setLoading(false);
+        
       })
       .catch((err) => {
         console.error("Failed to load hotel data:", err);
@@ -42,7 +45,7 @@ const UserProvider = ({ children }) => {
     query,
     setQuery,
     category,
-    setCategory,
+    setCategory,orderHistory, setOrderHistory
   };
 
   return (

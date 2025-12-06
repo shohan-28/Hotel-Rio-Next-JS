@@ -3,42 +3,56 @@
     "id": 1,
     "img": "https://i.postimg.cc/J7frgrcd/pexels-heyho-8092391.jpg",
     "location": "Dhaka",
-    "available": "Available"
+    "available": "Available",
+    "price": 2000,
+    "oldprice": 3000
   },
   {
     "id": 2,
     "img": "https://i.postimg.cc/yNV255Gq/pexels-jvdm-1457842.jpg",
     "location": "Sylhet",
-    "available": "Available"
+    "available": "Available",
+    "price": 2500,
+    "oldprice": 3500
   },
   {
     "id": 3,
     "img": "https://i.postimg.cc/sXxqfWsd/pexels-pixabay-271624.jpg",
     "location": "Dhaka",
-    "available": "Available"
+    "available": "Available",
+    "price": 2500,
+    "oldprice": 3000
   },
   {
     "id": 4,
     "img": "https://i.postimg.cc/fbw1FFPL/pexels-pixabay-279746.jpg",
     "location": "Khulna",
-    "available": "Available"
+    "available": "Available",
+    "price": 2000,
+    "oldprice": 2500
   },
   {
     "id": 5,
     "img": "https://i.postimg.cc/hGSNwwYK/pexels-suhel-vba-1749662-3659681.jpg",
     "location": "Khulna",
-    "available": "Available"
+    "available": "Available",
+    "price": 1500,
+    "oldprice": 2500
   },
   {
     "id": 6,
     "img": "https://i.postimg.cc/ZnyQphWF/sasha-kaunas-x-Ea-Aoiz-NFV8-unsplash.jpg",
     "location": "Cox's Bazar",
-    "available": "Available"
+    "available": "Available",
+    "price": 3500,
+    "oldprice": 4500
   },
   {
     "id": 7,
     "img": "https://i.postimg.cc/8PLpg2ZL/visualsofdana-T5p-L6ci-En-I-unsplash.jpg",
     "location": "Cox's Bazar",
-    "available": "Available"
+    "available": "Available",
+    "price": 3000,
+    "oldprice": 4000
   }
 ]

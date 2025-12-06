@@ -4,22 +4,27 @@ import React from "react";
 import { IoLocationSharp } from "react-icons/io5";
 
 const HotelDesign = ({ hotel }) => {
-  // Prevent crash if "hotel" is undefined
   if (!hotel) return null;
 
-  const { img, location, available, id } = hotel;
+  const { img, location, available, id, price, oldprice } = hotel;
 
   return (
-    <div className="border rounded-lg shadow-md overflow-hidden bg-white hover:shadow-lg transition">
+    <div className="border rounded-xl shadow-md overflow-hidden bg-white hover:shadow-xl transition-transform hover:scale-[1.02]">
+      {/* Image Section */}
       <div className="relative">
-        <Link href={`/Hotels/${id}`}>
-          <img src={img} alt={location} className="w-full h-48 object-cover" />
+        <Link href={`/Hotels/${id}`} passHref>
+          <img
+            src={img}
+            alt={location || "Hotel image"}
+            className="w-full h-52 object-cover"
+          />
         </Link>
 
+        {/* Availability Badge */}
         <span
-          className={`absolute top-2 right-2 px-3 py-1 text-sm font-semibold rounded ${
+          className={`absolute top-3 right-3 px-3 py-1 text-xs font-semibold rounded-lg shadow-md ${
             available === "Available"
-              ? "bg-green-600/50 text-white"
+              ? "bg-green-600/80 text-white"
               : "bg-red-600 text-white"
           }`}
         >
@@ -27,13 +32,34 @@ const HotelDesign = ({ hotel }) => {
         </span>
       </div>
 
-      <div className="p-4 justify-between flex">
-        <h2 className="text-lg font-semibold flex items-center space-x-2">
-          <IoLocationSharp /> {location}
+      {/* Content Section */}
+      <div className="p-4 flex flex-col space-y-3">
+        {/* Location */}
+        <h2 className="text-lg font-semibold flex items-center gap-2 text-gray-800">
+          <IoLocationSharp className="text-red-500" /> {location}
         </h2>
-        <button className="text-white text-base bg-black px-6 py-1 rounded-md cursor-pointer">
-          Book Now
-        </button>
+
+        {/* Price Section */}
+        <div className="flex items-center gap-3">
+          <span className="text-xl font-bold text-red-500">
+            ${price?.toLocaleString()}
+          </span>
+          {oldprice && (
+            <span className="text-sm text-gray-500 line-through">
+              ${oldprice?.toLocaleString()}
+            </span>
+          )}
+        </div>
+
+        {/* Button */}
+        <Link href={`/Hotels/${id}`} passHref>
+          <button
+            type="button"
+            className="w-full text-white text-base bg-gradient-to-r from-black to-gray-800 px-6 py-2 rounded-md cursor-pointer hover:opacity-90 transition"
+          >
+            Book Now
+          </button>
+        </Link>
       </div>
     </div>
   );
