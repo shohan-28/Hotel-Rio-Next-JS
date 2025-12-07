@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "img": "https://i.postimg.cc/sXxqfWsd/pexels-pixabay-271624.jpg",
+    "img": "https://i.postimg.cc/fbw1FFPL/pexels-pixabay-279746.jpg",
     "location": "Dhaka",
     "available": "Available",
     "price": 2500,
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "img": "https://i.postimg.cc/fbw1FFPL/pexels-pixabay-279746.jpg",
+    "img": "https://i.postimg.cc/sXxqfWsd/pexels-pixabay-271624.jpg",
     "location": "Khulna",
     "available": "Available",
     "price": 2000,

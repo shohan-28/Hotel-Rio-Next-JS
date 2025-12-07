@@ -1,7 +1,11 @@
 "use client";
 import { useContext, useState, useEffect } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { HotelContext } from "@/app/HotelContext";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import RegisterPage from './../../Register/page';
+
+import LoginPage from './../../Login/page';
 
 export default function HotelDetailPage() {
   const { Hotelid } = useParams();
@@ -11,6 +15,18 @@ export default function HotelDetailPage() {
   const [nights, setNights] = useState(1);
   const [confirmed, setConfirmed] = useState(false);
   const [confirmedDate, setConfirmedDate] = useState("");
+  const [user, setUser] = useState(null);
+
+  const router = useRouter();
+  const auth = getAuth();
+
+  // ✅ Track Firebase user state
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
 
   // ✅ Wait for hotelData to load
   useEffect(() => {
@@ -20,41 +36,44 @@ export default function HotelDetailPage() {
     }
   }, [loading, hotelData, Hotelid]);
 
-  if (loading) return <p className="text-center mt-10 text-blue-500">Loading...</p>;
-  if (!hotel) return <p className="text-center mt-10 text-red-500">Hotel not found</p>;
+  if (loading)
+    return <p className="text-center mt-10 text-blue-500">Loading...</p>;
+  if (!hotel)
+    return <p className="text-center mt-10 text-red-500">Hotel not found</p>;
 
   const pricePerNight = hotel.price || 2500;
   const totalPrice = nights * pricePerNight;
 
   const handleBooking = () => {
-    const dateString = new Date().toLocaleString();
-    setConfirmed(true);
-    setConfirmedDate(dateString);
+    if (user) {
+      // ✅ যদি লগইন থাকে → order confirm হবে
+      const dateString = new Date().toLocaleString();
+      setConfirmed(true);
+      setConfirmedDate(dateString);
 
-    // ✅ Add to orderHistory
-    setOrderHistory((prev) => [
-      ...prev,
-      {
-        id: Date.now(),
-        hotel: hotel.location,
-        nights,
-        totalPrice,
-        date: dateString,
-      },
-    ]);
-
-    console.log("Order added:", {
-      id: Date.now(),
-      hotel: hotel.location,
-      nights,
-      totalPrice,
-      date: dateString,
-    });
+      setOrderHistory((prev) => [
+        ...prev,
+        {
+          id: Date.now(),
+          hotel: hotel.location,
+          nights,
+          totalPrice,
+          date: dateString,
+        },
+      ]);
+    } else {
+      // ❌ যদি লগইন না থাকে → শুধু message দেখাবে
+      setConfirmed(false);
+    }
   };
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-      <img src={hotel.img} alt={hotel.location} className="w-full h-72 object-cover rounded-lg" />
+      <img
+        src={hotel.img}
+        alt={hotel.location}
+        className="w-full h-72 object-cover rounded-lg"
+      />
       <div className="mt-6">
         <h1 className="text-3xl font-bold">{hotel.location}</h1>
         <p className="mt-2 text-gray-600">Status: {hotel.available}</p>
@@ -73,8 +92,12 @@ export default function HotelDetailPage() {
           />
         </div>
 
-        <p className="mt-3">Price per night: <strong>{pricePerNight}৳</strong></p>
-        <p>Total: <strong className="text-blue-600">{totalPrice}৳</strong></p>
+        <p className="mt-3">
+          Price per night: <strong>{pricePerNight}৳</strong>
+        </p>
+        <p>
+          Total: <strong className="text-blue-600">{totalPrice}৳</strong>
+        </p>
       </div>
 
       <button
@@ -84,10 +107,35 @@ export default function HotelDetailPage() {
         Book Now
       </button>
 
-      {confirmed && (
+      {/* ✅ যদি লগইন থাকে এবং confirm হয় */}
+      {confirmed && user && (
         <div className="mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-          ✅ Order confirmed for <strong>{nights}</strong> night(s) at <strong>{hotel.location}</strong>. Total: <strong>{totalPrice}৳</strong> <br/>
+          ✅ Order confirmed for <strong>{nights}</strong> night(s) at{" "}
+          <strong>{hotel.location}</strong>. Total:{" "}
+          <strong>{totalPrice}৳</strong> <br />
           Confirmed at: <strong>{confirmedDate}</strong>
+        </div>
+      )}
+
+      {/* ❌ যদি লগইন না থাকে */}
+      {!user && !confirmed && (
+        <div className="mt-6 p-4 bg-yellow-100 border border-yellow-400 text-yellow-700 rounded-lg">
+          ⚠️ You must login to book this hotel. Go to
+          <div className="space-x-2">
+            <button
+              onClick={() => router.push("/Register")}
+              className="mt-3 px-4 py-2 bg-green-600 text-white rounded cursor-pointer"
+            >
+              REGISTER
+            </button>
+
+            <button
+              onClick={() => router.push("/Login")}
+              className="mt-3 px-4 py-2 bg-green-600 text-white rounded cursor-pointer"
+            >
+              LOGIN
+            </button>
+          </div>
         </div>
       )}
     </div>

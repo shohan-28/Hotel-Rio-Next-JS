@@ -9,9 +9,12 @@ const UserProvider = ({ children }) => {
   const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(true);
 
-  const [query, setQuery] = useState("");
+  
   const [category, setCategory] = useState("");
    const [orderHistory, setOrderHistory] = useState([]);
+
+   //For Search Engine
+   const [query, setQuery] = useState('');
 
 
   // cart count auto update
