@@ -18,11 +18,15 @@ export default function Navbar() {
     <div className="bg-white shadow">
       <div className="container mx-auto">
         <div className="flex items-center justify-between h-[60px] px-4">
-          
-          <p className={`font-bold text-3xl ${borel.className}`}>Hotel Rio</p>
+
+          <div className="flex items-center justify-center h-full">
+            <p className={`font-bold text-3xl text-center h-[18px] ${borel.className}`}>
+              Hotel Rio
+            </p>
+          </div>
 
           <div className="flex items-center gap-6">
-            
+
             {/* Desktop menu */}
             <div className="hidden md:flex gap-6">
               <Link href="/" className="text-gray-700 hover:text-green-500">HOME</Link>
@@ -32,10 +36,10 @@ export default function Navbar() {
             </div>
 
             {/* Auth Buttons */}
-            <div className="flex gap-4">
+            <div className="flex lg:gap-4 gap-2">
               {/* Always show OrderHistory */}
               <Link href="/OrderHistory">
-                <button className="cursor-pointer text-black bg-amber-400 hover:bg-amber-300 rounded-md px-3 py-2">
+                <button className="cursor-pointer text-black bg-amber-400 hover:bg-amber-300 lg:text-base text-[12px] rounded-md px-3 py-2">
                   Order History
                 </button>
               </Link>
@@ -50,13 +54,13 @@ export default function Navbar() {
               ) : (
                 <>
                   <Link href="/Register">
-                    <button className="text-white bg-green-400 hover:bg-green-500 rounded-md px-3 py-2">
+                    <button className="text-white lg:text-base text-[12px] bg-green-400 hover:bg-green-500 rounded-md px-3 py-2">
                       REGISTER
                     </button>
                   </Link>
 
                   <Link href="/Login">
-                    <button className="text-white bg-green-400 hover:bg-green-500 rounded-md px-3 py-2">
+                    <button className="text-white bg-green-400 hover:bg-green-500 rounded-md px-3 py-2 lg:text-base text-[12px]">
                       LOGIN
                     </button>
                   </Link>

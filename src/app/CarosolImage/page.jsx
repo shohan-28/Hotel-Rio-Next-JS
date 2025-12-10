@@ -24,7 +24,7 @@ export default function Carousel() {
   return (
     <div className="relative w-full max-w-6xl mx-auto py-5">
       {/* Carousel Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
         {visibleItems.map((item) => (
           <div
             key={item.id}

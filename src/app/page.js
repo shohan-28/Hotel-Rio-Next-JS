@@ -66,12 +66,12 @@ export default function Home() {
         )}
       </div> */}
 
-      <div className="flex items-center justify-center bg-gray-50">
+      <div className="flex items-center justify-center bg-white">
         <ServiceCTA />
       </div>
 
-      <div className="py-10 container mx-auto rounded-xl">
-        <div className="flex justify-between pl-30 pr-14 bg-gray-50 py-10">
+      <div className="py-10 container mx-auto ">
+        <div className="flex justify-between pl-30 pr-14 bg-gray-50 py-10 rounded-3xl">
           {/* Location */}
           <div className="w-full max-w-sm">
             <label
