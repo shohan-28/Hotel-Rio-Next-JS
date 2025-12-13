@@ -75,8 +75,8 @@ export default function HotelDetailPage() {
         className="w-full h-72 object-cover rounded-lg"
       />
       <div className="mt-6">
-        <h1 className="text-3xl font-bold">{hotel.location}</h1>
-        <p className="mt-2 text-gray-600">Status: {hotel.available}</p>
+        <h1 className="text-sm sm:text-base md:text-xl lg:text-2xl font-bold ">{hotel.location}</h1>
+        <p className="mt-2 text-green-500">Status: {hotel.available}</p>
       </div>
 
       <div className="mt-6 border-t pt-4">
