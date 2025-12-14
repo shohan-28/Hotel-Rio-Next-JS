@@ -7,6 +7,7 @@ import Carousel from "./CarosolImage/page";
 import ServiceCTA from "./serviceCTA/page";
 import AnimationLoader from "./AppWithLoading/page";
 import SearchComponent from "./SearchComponent/page";
+import OurService from "./OurService/page";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -40,6 +41,7 @@ export default function Home() {
             <div className="flex items-center justify-center bg-white">
               <ServiceCTA />
             </div>
+            <OurService></OurService>
             <SearchComponent></SearchComponent>
             <Carousel />
           </>
