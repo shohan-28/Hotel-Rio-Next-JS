@@ -41,9 +41,11 @@ export default function Home() {
             <div className="flex items-center justify-center bg-white">
               <ServiceCTA />
             </div>
-            <OurService></OurService>
-            <SearchComponent></SearchComponent>
-            <Carousel />
+            <div className="bg-white">
+              <OurService></OurService>
+              <SearchComponent></SearchComponent>
+              <Carousel />
+            </div>
           </>
         )}
       </div>

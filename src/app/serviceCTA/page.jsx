@@ -11,7 +11,7 @@ const borel = Borel({
 
 export default function ServiceCTA() {
   return (
-    <section className="relative bg-white dark:bg-black py-16">
+    <section className="relative bg-white  py-16">
       <div className="mx-auto max-w-6xl px-6 text-center">
         {/* Heading */}
         <h2 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-4xl">
