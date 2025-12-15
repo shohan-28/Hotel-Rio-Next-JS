@@ -75,24 +75,24 @@ export default function HotelDetailPage() {
         className="w-full h-72 object-cover rounded-lg"
       />
       <div className="mt-6">
-        <h1 className="text-sm sm:text-base md:text-xl lg:text-2xl font-bold ">{hotel.location}</h1>
+        <h1 className="text-sm sm:text-base md:text-xl lg:text-2xl font-bold text-black">{hotel.location}</h1>
         <p className="mt-2 text-green-500">Status: {hotel.available}</p>
       </div>
 
       <div className="mt-6 border-t pt-4">
-        <h2 className="text-xl font-semibold">Booking Details</h2>
-        <div className="flex items-center gap-4 mt-3">
+        <h2 className="text-xl font-semibold text-black">Booking Details</h2>
+        <div className="flex items-center gap-4 mt-3 text-black">
           <label>Nights:</label>
           <input
             type="number"
             min="1"
             value={nights}
             onChange={(e) => setNights(Number(e.target.value))}
-            className="w-20 px-2 py-1 border rounded"
+            className="w-20 px-2 py-1 border rounded text-black"
           />
         </div>
 
-        <p className="mt-3">
+        <p className="mt-3 text-black">
           Price per night: <strong>{pricePerNight}৳</strong>
         </p>
         <p>
