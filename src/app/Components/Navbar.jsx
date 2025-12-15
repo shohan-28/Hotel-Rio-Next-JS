@@ -15,11 +15,11 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-white shadow">
+    <div className="bg-blue-50 rounded-b-full">
       <div className="container mx-auto">
-        <div className="flex items-center justify-between h-[60px] px-4">
+        <div className="flex items-center justify-between h-[70px] px-4">
 
-          <div className="flex items-center justify-center h-full">
+          <div className="flex items-center justify-center h-full ">
             <p className={`font-bold text-3xl text-center h-[18px] ${borel.className}`}>
               Hotel Rio
             </p>
