@@ -20,15 +20,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-[70px] pt-2 px-4">
 
           <div className="flex items-center justify-center h-full ">
-            <p className={`font-bold lg:text-3xl md:text-2xl text-base flex items-center text-black text-center h-[18px] ${borel.className}`}>
+            <p className={`font-bold lg:text-3xl md:text-2xl text-[13px] flex items-center lg:pr-0 pr-4 text-black text-center h-[18px] ${borel.className}`}>
               Hotel Rio
             </p>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
 
             {/* Desktop menu */}
-            <div className="hidden md:flex gap-6">
+            <div className="hidden md:flex gap-4">
               <Link href="/" className="text-gray-700 hover:text-green-500">HOME</Link>
               <Link href="/Hotels" className="text-gray-700 hover:text-green-500">HOTELS</Link>
               <Link href="/AboutUs" className="text-gray-700 hover:text-green-500">ABOUT US</Link>
@@ -39,7 +39,7 @@ export default function Navbar() {
             <div className="flex lg:gap-4 gap-2">
               {/* Always show OrderHistory */}
               <Link href="/OrderHistory">
-                <button className="cursor-pointer text-black bg-amber-400 hover:bg-amber-300 lg:text-base text-[12px] rounded-md px-3 py-2">
+                <button className="cursor-pointer text-black bg-amber-400 hover:bg-amber-300 lg:text-base text-[10px] rounded-md px-3 py-2">
                   Order History
                 </button>
               </Link>
@@ -54,13 +54,13 @@ export default function Navbar() {
               ) : (
                 <>
                   <Link href="/Register">
-                    <button className="text-white lg:text-base text-[12px] bg-green-400 hover:bg-green-500 rounded-md px-3 py-2">
+                    <button className="text-white lg:text-base text-[10px] bg-green-400 hover:bg-green-500 rounded-md px-3 py-2">
                       REGISTER
                     </button>
                   </Link>
 
                   <Link href="/Login">
-                    <button className="text-white bg-green-400 hover:bg-green-500 rounded-md px-3 py-2 lg:text-base text-[12px]">
+                    <button className="text-white bg-green-400 hover:bg-green-500 rounded-md px-3 py-2 lg:text-base text-[10px]">
                       LOGIN
                     </button>
                   </Link>
