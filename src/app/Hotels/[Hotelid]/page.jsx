@@ -95,7 +95,7 @@ export default function HotelDetailPage() {
         <p className="mt-3 text-black">
           Price per night: <strong>{pricePerNight}৳</strong>
         </p>
-        <p>
+        <p className="text-black">
           Total: <strong className="text-blue-600">{totalPrice}৳</strong>
         </p>
       </div>

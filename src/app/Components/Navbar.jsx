@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-[70px] pt-2 px-4">
 
           <div className="flex items-center justify-center h-full ">
-            <p className={`font-bold lg:text-3xl md:text-2xl text-[16px] flex items-center lg:pr-0 pr-4 text-black text-center h-[18px] ${borel.className}`}>
+            <p className={`font-bold lg:text-3xl md:text-2xl text-[20px] flex items-center lg:pr-0 pr-4 text-black text-center h-[18px] ${borel.className}`}>
               Hotel Rio
             </p>
           </div>
