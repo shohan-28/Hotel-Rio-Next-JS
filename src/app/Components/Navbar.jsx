@@ -25,10 +25,10 @@ export default function Navbar() {
             </p>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center lg:gap-4 gap-2">
 
             {/* Desktop menu */}
-            <div className="hidden md:flex gap-4">
+            <div className="hidden md:flex lg:gap-4 gap-2">
               <Link href="/" className="text-gray-700 hover:text-green-500">HOME</Link>
               <Link href="/Hotels" className="text-gray-700 hover:text-green-500">HOTELS</Link>
               <Link href="/AboutUs" className="text-gray-700 hover:text-green-500">ABOUT US</Link>
@@ -36,10 +36,10 @@ export default function Navbar() {
             </div>
 
             {/* Auth Buttons */}
-            <div className="flex lg:gap-4 gap-2">
+            <div className="flex lg:gap-4 gap-1">
               {/* Always show OrderHistory */}
               <Link href="/OrderHistory">
-                <button className="cursor-pointer text-black bg-amber-400 hover:bg-amber-300 lg:text-base text-[10px] rounded-md px-3 py-2">
+                <button className="cursor-pointer text-black bg-amber-400 hover:bg-amber-300 lg:text-base text-[10px] rounded-md lg:px-3 px-2 py-2">
                   Order History
                 </button>
               </Link>
@@ -47,20 +47,20 @@ export default function Navbar() {
               {user ? (
                 <button
                   onClick={logout}
-                  className="text-white bg-red-500 hover:bg-red-600 rounded-md px-3 py-2"
+                  className="text-white bg-red-500 hover:bg-red-600 rounded-md lg:text-base text-[10px] lg:px-3 py-2"
                 >
                   LOGOUT
                 </button>
               ) : (
                 <>
                   <Link href="/Register">
-                    <button className="text-white lg:text-base text-[10px] bg-green-400 hover:bg-green-500 rounded-md px-3 py-2">
+                    <button className="text-white lg:text-base text-[10px] bg-green-400 hover:bg-green-500 rounded-md lg:px-3 px-2 py-2">
                       REGISTER
                     </button>
                   </Link>
 
                   <Link href="/Login">
-                    <button className="text-white bg-green-400 hover:bg-green-500 rounded-md px-3 py-2 lg:text-base text-[10px]">
+                    <button className="text-white bg-green-400 hover:bg-green-500 rounded-md lg:px-3 px-2 py-2 lg:text-base text-[10px]">
                       LOGIN
                     </button>
                   </Link>
