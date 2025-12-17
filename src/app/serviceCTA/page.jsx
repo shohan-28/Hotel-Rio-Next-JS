@@ -31,7 +31,7 @@ export default function ServiceCTA() {
           </Link>
           <Link
             href="/AboutUs"
-            className="inline-flex items-center rounded-md border border-gray-300 px-5 py-2 text-sm font-medium text-black transition hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-600"
+            className="inline-flex items-center rounded-md border border-gray-300 px-5 py-2 text-sm font-medium text-black transition hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-600"
           >
             Read More
           </Link>

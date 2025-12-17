@@ -56,7 +56,7 @@ const SearchComponent = () => {
 
     return (
         <div>
-            <div className="py-6 md:py-10 container mx-auto px-4">
+            <div className="py-6 md:py-10 w-11/12 mx-auto ">
                 <div
                     className="
       bg-gray-50 py-6 md:py-10 rounded-3xl
