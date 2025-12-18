@@ -19,6 +19,7 @@ export default function HotelDetailPage() {
 
   const router = useRouter();
   const auth = getAuth();
+  const [showText,setShowText] = useState(false);
 
   // ✅ Track Firebase user state
   useEffect(() => {
@@ -64,6 +65,8 @@ export default function HotelDetailPage() {
     } else {
       // ❌ যদি লগইন না থাকে → শুধু message দেখাবে
       setConfirmed(false);
+      alert("Please login first");
+      setShowText(true);
     }
   };
 
@@ -138,6 +141,14 @@ export default function HotelDetailPage() {
           </div>
         </div>
       )}
+
+      {
+        showText && (
+          <div className="text-red-500 text-2xl  h-[100px] flex justify-center items-center">
+            <p className="bg-yellow-100">Please Login first!</p>
+          </div>
+        )
+      }
     </div>
   );
 }
