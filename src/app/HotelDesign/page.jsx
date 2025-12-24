@@ -35,7 +35,7 @@ const HotelDesign = ({ hotel }) => {
       {/* Content Section */}
       <div className="p-4 flex flex-col space-y-3">
         {/* Location */}
-        <h2 className="text-lg font-semibold flex items-center gap-2 text-gray-800">
+        <h2 className="text-lg font-semibold flex items-center gap-2 text-black">
           <IoLocationSharp className="text-red-500" /> {location}
         </h2>
 

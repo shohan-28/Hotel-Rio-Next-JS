@@ -7,7 +7,7 @@ import 'animate.css';
 
 const OurService = () => {
     return (
-        <div className='bg-white pb-5'>
+        <div className='bg-white pb-5 min-h-[250px]'>
             <div className='w-11/12 mx-auto'>
                 <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 py-5 h-fit w-full text-black'>
                     <div className='space-y-4 py-4 px-4 flex flex-col justify-center items-center  bg-blue-50 rounded-xl animate__animated animate__backInLeft'>
