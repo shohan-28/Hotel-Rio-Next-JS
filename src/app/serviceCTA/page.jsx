@@ -14,7 +14,7 @@ export default function ServiceCTA() {
     <section className="relative bg-white  py-16 min-h-[600px]">
       <div className="mx-auto max-w-6xl px-6 text-center">
         {/* Heading */}
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-4xl">
+        <h2 className="text-4xl font-bold text-black dark:text-white sm:text-4xl">
           Welcome to <span className={`${borel.className} mango reveal-text text-5xl bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent `}>Hotel Rio</span>
         </h2>
         <p className="mt-4   max-w-2xl mx-auto font-extrabold bg-gradient-to-r from-violet-400 via-purple-600 to-fuchsia-500 bg-clip-text text-transparent">

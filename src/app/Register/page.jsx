@@ -21,7 +21,7 @@ export default function RegisterPage() {
   return (
     <main className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
       <div className="w-full max-w-md bg-white shadow-lg rounded-xl p-6">
-        <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
+        <h1 className="text-2xl font-bold text-center mb-6 text-black">
         
         </h1>
 
@@ -29,7 +29,7 @@ export default function RegisterPage() {
         <AuthForm type="signup" onSubmit={handleSignup} />
 
         {/* Optional: Link to Login */}
-        <p className="text-center text-sm text-gray-600 mt-4">
+        <p className="text-center text-sm text-black mt-4">
           Already have an account?{" "}
           <a href="/Login" className="text-green-500 hover:underline">
             Login here
