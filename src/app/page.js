@@ -31,12 +31,12 @@ export default function Home() {
           
         )}
       </div> */}
-      <div className="App">
+      {/* <div className="App">
         {loading ? (
           <div className="loading-wrapper">
             <AnimationLoader />
           </div>
-        ) : (
+        ) : ( */}
           <>
             <div className="flex items-center justify-center bg-white">
               <ServiceCTA />
@@ -47,11 +47,11 @@ export default function Home() {
               <Carousel />
             </div>
           </>
-        )}
+        {/* )} */}
       </div>
 
 
 
-    </div>
+    // </div>
   );
 }
