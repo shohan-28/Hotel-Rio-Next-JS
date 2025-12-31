@@ -24,7 +24,7 @@ export default function AuthForm({ type, onSubmit }) {
         placeholder="Enter email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="border p-2 w-full rounded"
+        className="border p-2 w-full rounded text-black"
         required
       />
 
@@ -33,7 +33,7 @@ export default function AuthForm({ type, onSubmit }) {
         placeholder="Enter password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="border p-2 w-full rounded"
+        className="border p-2 w-full rounded text-black"
         required
       />
 
