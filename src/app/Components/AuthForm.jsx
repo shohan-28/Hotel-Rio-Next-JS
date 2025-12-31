@@ -15,7 +15,7 @@ export default function AuthForm({ type, onSubmit }) {
       onSubmit={handleSubmit}
       className="bg-white p-6 rounded shadow-md w-full max-w-sm space-y-4"
     >
-      <h2 className="text-xl font-semibold text-center">
+      <h2 className="text-xl font-semibold text-center text-black">
         {type === "signup" ? "Create Account" : "Login"}
       </h2>
 
