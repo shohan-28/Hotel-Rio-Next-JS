@@ -19,7 +19,7 @@ export default function OrderHistory() {
       <ul className="space-y-4">
         {orderHistory.map((order) => (
           <li key={order.id} className="border p-4 rounded-lg shadow-sm hover:shadow-md">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center text-black">
               <p className="font-semibold text-black">{order.hotel}</p>
               <span className="text-sm text-black">{order.date}</span>
             </div>
