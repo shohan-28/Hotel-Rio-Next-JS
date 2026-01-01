@@ -15,13 +15,13 @@ export default function OrderHistory() {
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-      <h1 className="text-2xl font-bold mb-6">Order History</h1>
+      <h1 className="text-2xl text-black font-bold mb-6">Order History</h1>
       <ul className="space-y-4">
         {orderHistory.map((order) => (
           <li key={order.id} className="border p-4 rounded-lg shadow-sm hover:shadow-md">
             <div className="flex justify-between items-center">
-              <p className="font-semibold">{order.hotel}</p>
-              <span className="text-sm text-gray-500">{order.date}</span>
+              <p className="font-semibold text-black">{order.hotel}</p>
+              <span className="text-sm text-black">{order.date}</span>
             </div>
             <p>Nights: {order.nights}</p>
             <p>Total: <strong className="text-blue-600">{order.totalPrice}৳</strong></p>
