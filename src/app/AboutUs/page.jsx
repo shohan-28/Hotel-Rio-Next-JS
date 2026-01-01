@@ -17,13 +17,13 @@ export default function AboutUs() {
           <h2 className="text-3xl font-semibold text-gray-800 mb-6">
             Experience Luxury & Comfort
           </h2>
-          <p className="text-gray-600 leading-relaxed mb-6">
+          <p className="text-black leading-relaxed mb-6">
             Welcome to <span className="font-semibold">Hotel Rio</span>, where
             timeless elegance meets modern hospitality. Nestled in the heart of
             the city, we pride ourselves on delivering premium experiences for
             both leisure and business travelers.
           </p>
-          <p className="text-gray-600 leading-relaxed mb-6">
+          <p className="text-black leading-relaxed mb-6">
             Our mission is simple: to make every stay unforgettable. From
             world-class dining to serene spa retreats, Hotel Rio is more than a
             destination — it’s a lifestyle.
@@ -47,20 +47,20 @@ export default function AboutUs() {
       <div className="bg-gray-100 py-16">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center">
           <div className="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-            <h4 className="text-xl font-semibold mb-4">🏆 Premium Service</h4>
-            <p className="text-gray-600">
+            <p className="text-xl font-semibold mb-4 text-black">🏆 Premium Service</p>
+            <p className="text-black">
               Personalized care and attention to detail for every guest.
             </p>
           </div>
           <div className="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-            <h4 className="text-xl font-semibold mb-4">🍽 Fine Dining</h4>
-            <p className="text-gray-600">
+            <p className="text-xl font-semibold mb-4 text-black">🍽 Fine Dining</p>
+            <p className="text-black">
               Culinary experiences crafted by world-class chefs.
             </p>
           </div>
           <div className="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-            <h4 className="text-xl font-semibold mb-4">🌍 Global Standards</h4>
-            <p className="text-gray-600">
+            <p className="text-xl font-semibold mb-4 text-black">🌍 Global Standards</p>
+            <p className="text-black">
               International hospitality standards with a local touch.
             </p>
           </div>
