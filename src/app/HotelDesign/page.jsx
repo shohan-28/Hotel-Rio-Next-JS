@@ -42,11 +42,11 @@ const HotelDesign = ({ hotel }) => {
         {/* Price Section */}
         <div className="flex items-center gap-3">
           <span className="text-xl font-bold text-red-500">
-            ${price?.toLocaleString()}
+            ৳{price?.toLocaleString()}
           </span>
           {oldprice && (
             <span className="text-sm text-gray-500 line-through">
-              ${oldprice?.toLocaleString()}
+              ৳{oldprice?.toLocaleString()}
             </span>
           )}
         </div>

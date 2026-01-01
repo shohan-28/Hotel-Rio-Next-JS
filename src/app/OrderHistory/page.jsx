@@ -23,8 +23,8 @@ export default function OrderHistory() {
               <p className="font-semibold text-black">{order.hotel}</p>
               <span className="text-sm text-black">{order.date}</span>
             </div>
-            <p>Nights: {order.nights}</p>
-            <p>Total: <strong className="text-blue-600">{order.totalPrice}৳</strong></p>
+            <p className="text-black">Nights: {order.nights}</p>
+            <p className="text-black">Total: <strong className="text-blue-600">{order.totalPrice}৳</strong></p>
           </li>
         ))}
       </ul>
